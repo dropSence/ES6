@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        id: "1234567",
+        init: function () {
+          console.log("普通函数的this：", this);
+        },
+        doSomething: () => {
+          console.log("箭头函数的this：", this);
+        },
+      };
+      // const init = obj.init
+      // init()
+      obj.doSomething.call({ id: 1 });
+      obj.init();
+    </script>
+  </body>
+</html>
